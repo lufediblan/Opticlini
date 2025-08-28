@@ -27,3 +27,9 @@ flutter:
     - assets/lentes_cuidar.png
     - assets/lentes_limpiar.png
     - assets/gafas.png
+    - assets/peligro.png
+    - assets/reloj1.png
+    - assets/ic_clock.png
+    - assets/ic_hands.png
+    - assets/ic_drops.png
+    - assets/ic_warning.png

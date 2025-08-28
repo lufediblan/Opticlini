@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+// Detalles (ajusta la ruta si están en otra carpeta)
+import 'contact_lens_care_page.dart';
+import 'glasses_care_page.dart';
+
 class RecommendationsPage extends StatelessWidget {
   const RecommendationsPage({super.key});
 
@@ -15,7 +19,7 @@ class RecommendationsPage extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.fromLTRB(0, 0, 0, 24),
           children: [
-            // ===== HEADER (igual a las demás pantallas) =====
+            // ===== HEADER (igual a tus otras vistas) =====
             Container(
               height: 136,
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -42,6 +46,7 @@ class RecommendationsPage extends StatelessWidget {
                         fontSize: 20,
                         fontWeight: FontWeight.w800,
                         color: Colors.black,
+                        shadows: [Shadow(color: Color(0x33000000), offset: Offset(0, 1), blurRadius: 2)],
                       ),
                     ),
                   ),
@@ -50,85 +55,103 @@ class RecommendationsPage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 52),
+            const SizedBox(height: 56),
 
-            // ===== PÍLDORA (con padding lateral 24) =====
+            // ===== PÍLDORA =====
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(24),
+                  boxShadow: const [
+                    BoxShadow(color: Color(0x29000000), blurRadius: 18, offset: Offset(0, 10)),
+                    BoxShadow(color: Color(0x10000000), blurRadius: 3, offset: Offset(0, 1)),
+                  ],
+                ),
+                child: Row(
+                  children: [
+                    InkWell(
+                      borderRadius: BorderRadius.circular(20),
+                      onTap: () => Navigator.pop(context),
+                      child: const SizedBox(
+                        width: 36,
+                        height: 36,
+                        child: Center(
+                          child: Icon(Icons.chevron_left, size: 26, color: brand),
+                        ),
+                      ),
+                    ),
+                    const Expanded(
+                      child: Center(
+                        child: Text(
+                          'Recomendaciones',
+                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 36,
+                      height: 36,
+                      child: Center(child: Icon(Icons.auto_awesome, size: 22, color: brand)),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 24),
+
+            // ===== TARJETAS (2 arriba) =====
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Row(
                 children: [
                   Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(24),
-                        boxShadow: const [
-                          BoxShadow(color: Color(0x29000000), blurRadius: 18, offset: Offset(0, 10)),
-                          BoxShadow(color: Color(0x10000000), blurRadius: 3, offset: Offset(0, 1)),
-                        ],
-                      ),
-                      child: Row(
-                        children: [
-                          InkWell(
-                            borderRadius: BorderRadius.circular(24),
-                            onTap: () => Navigator.pop(context),
-                            child: const Padding(
-                              padding: EdgeInsets.only(right: 8),
-                              child: Icon(Icons.chevron_left, size: 38, color: brand),
-                            ),
-                          ),
-                          const SizedBox(width: 4),
-                          const Expanded(
-                            child: Text(
-                              'Recomendaciones',
-                              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
-                            ),
-                          ),
-                          const Icon(Icons.auto_awesome, size: 24, color: brand), // ⭐
-                        ],
-                      ),
+                    child: _RecCard(
+                      title: 'Cuidar mis lentes\nde contacto',
+                      asset: 'assets/lentes_cuidar.png',
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (_) => const ContactLensCarePage()),
+                        );
+                        // o por ruta con nombre: Navigator.pushNamed(context, '/recommendations/contact-lens-care');
+                      },
+                    ),
+                  ),
+                  const SizedBox(width: 16),
+                  Expanded(
+                    child: _RecCard(
+                      title: 'Limpiar mis lentes\nde contacto',
+                      asset: 'assets/lentes_limpiar.png',
+                      onTap: () {
+                        // TODO: Conecta a la vista "Limpiar mis lentes de contacto" cuando la tengas
+                        // Navigator.push(context, MaterialPageRoute(builder: (_) => const CleanContactLensPage()));
+                      },
                     ),
                   ),
                 ],
               ),
             ),
 
-            const SizedBox(height: 35),
+            const SizedBox(height: 16),
 
-            // ===== TARJETAS (2 arriba con padding externo por lado) =====
-            Row(
-              children: const [
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.only(left: 24), // margen exterior izquierdo
-                    child: _RecCard(
-                      title: 'Cuidar mis lentes\nde contacto',
-                      asset: 'assets/lentes_cuidar.png',
-                    ),
-                  ),
-                ),
-                SizedBox(width: 16), // separación entre tarjetas
-                Expanded(
-                  child: Padding(
-                    padding: EdgeInsets.only(right: 24), // margen exterior derecho
-                    child: _RecCard(
-                      title: 'Limpiar mis lentes\nde contacto',
-                      asset: 'assets/lentes_limpiar.png',
-                    ),
-                  ),
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 35),
-
-            // ===== TARJETA ANCHA (con padding lateral simétrico) =====
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24),
+            // ===== TARJETA ANCHA =====
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
               child: _RecCardWide(
                 title: 'Cuidar y limpiar mis gafas',
                 asset: 'assets/gafas.png',
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const GlassesCarePage()),
+                  );
+                  // o: Navigator.pushNamed(context, '/recommendations/glasses-care');
+                },
               ),
             ),
           ],
@@ -138,16 +161,21 @@ class RecommendationsPage extends StatelessWidget {
   }
 }
 
-/// Tarjeta cuadrada (para las dos de arriba)
+/// Tarjeta cuadrada (dos de arriba)
 class _RecCard extends StatelessWidget {
-  const _RecCard({required this.title, required this.asset});
+  const _RecCard({
+    required this.title,
+    required this.asset,
+    this.onTap,
+  });
 
   final String title;
   final String asset;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    final card = Container(
       padding: const EdgeInsets.fromLTRB(16, 14, 16, 18),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -166,23 +194,39 @@ class _RecCard extends StatelessWidget {
             style: const TextStyle(fontSize: 16.5, fontWeight: FontWeight.w800),
           ),
           const SizedBox(height: 12),
-          Image.asset(asset, width: 92, height: 92, fit: BoxFit.contain),
+          Image.asset(asset, width: 100, height: 100, fit: BoxFit.contain),
         ],
+      ),
+    );
+
+    if (onTap == null) return card;
+
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(20),
+        onTap: onTap,
+        child: card,
       ),
     );
   }
 }
 
-/// Tarjeta ancha (para la de gafas)
+/// Tarjeta ancha (la de abajo)
 class _RecCardWide extends StatelessWidget {
-  const _RecCardWide({required this.title, required this.asset});
+  const _RecCardWide({
+    required this.title,
+    required this.asset,
+    this.onTap,
+  });
 
   final String title;
   final String asset;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    final card = Container(
       padding: const EdgeInsets.fromLTRB(16, 14, 16, 18),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -200,9 +244,20 @@ class _RecCardWide extends StatelessWidget {
             textAlign: TextAlign.center,
             style: const TextStyle(fontSize: 16.5, fontWeight: FontWeight.w800),
           ),
-          const SizedBox(height: 12),
-          Image.asset(asset, width: 120, height: 120, fit: BoxFit.contain),
+          const SizedBox(height: 10),
+          Image.asset(asset, width: 130, height: 130, fit: BoxFit.contain),
         ],
+      ),
+    );
+
+    if (onTap == null) return card;
+
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        borderRadius: BorderRadius.circular(20),
+        onTap: onTap,
+        child: card,
       ),
     );
   }

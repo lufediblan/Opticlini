@@ -46,7 +46,7 @@ class PatientTestsPage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 28),
+            const SizedBox(height: 56),
 
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 8),
@@ -56,7 +56,7 @@ class PatientTestsPage extends StatelessWidget {
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.w900, letterSpacing: .2),
               ),
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 35),
 
             // ===== TARJETA 1 envuelta con Padding lateral configurable =====
             Padding(
@@ -67,7 +67,7 @@ class PatientTestsPage extends StatelessWidget {
                 circleImage: true,
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 35),
 
             // ===== TARJETA 2 envuelta con Padding lateral configurable =====
             Padding(
@@ -114,7 +114,7 @@ class _TestCard extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text(title, textAlign: TextAlign.center, style: const TextStyle(fontSize: 20, fontWeight: FontWeight.w800)),
+          Text(title, textAlign: TextAlign.center, style: const TextStyle(fontSize: 22, fontWeight: FontWeight.w800)),
           const SizedBox(height: 12),
           if (circleImage)
             ClipOval(
@@ -123,7 +123,7 @@ class _TestCard extends StatelessWidget {
           else
             ClipRRect(
               borderRadius: BorderRadius.circular(8),
-              child: Image.asset(asset, width: 180, height: 150, fit: BoxFit.cover),
+              child: Image.asset(asset, width: 130, height: 120, fit: BoxFit.cover),
             ),
         ],
       ),

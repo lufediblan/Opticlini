@@ -3,7 +3,9 @@ import 'features/auth/presentation/pages/login_page.dart';
 import 'features/auth/presentation/pages/register_page.dart';
 import 'features/patient/presentation/pages/patient_home_page.dart';
 import 'features/patient/presentation/pages/recommendations_page.dart';
-
+import 'features/patient/presentation/pages/clinical_history_page.dart';
+import 'features/patient/presentation/pages/glasses_care_page.dart';
+import 'features/patient/presentation/pages/contact_lens_care_page.dart';
 void main() {
   runApp(const OpticLiniApp());
 }
@@ -83,6 +85,10 @@ class OpticLiniApp extends StatelessWidget {
         '/register': (_) => const RegisterPage(),
         '/patient/home': (_) => const PatientHomePage(),
         '/recommendations': (_) => const RecommendationsPage(),
+        '/clinical-history': (_) => const ClinicalHistoryPage(),
+        '/recommendations/glasses-care': (_) => const GlassesCarePage(),
+        '/recommendations/contact-lens-care': (_) => const ContactLensCarePage(),
+
       },
     );
   }

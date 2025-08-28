@@ -186,7 +186,7 @@ class PatientAppointmentsPage extends StatelessWidget {
         decoration: InputDecoration(
           hintText: hint,
           hintStyle: kSubtitle.copyWith(color: hintGray),
-          prefixIcon: Icon(icon, color: hintGray), // 👈 aquí ya no es const
+          prefixIcon: Icon(icon, color: hintGray,size:30,), // 👈 aquí ya no es const
           filled: true,
           fillColor: Colors.white,
           contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 14),
