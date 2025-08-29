@@ -5,7 +5,8 @@ import 'recommendations_page.dart';
 import 'clinical_history_page.dart';
 
 class PatientHomePage extends StatefulWidget {
-  const PatientHomePage({super.key});
+  const PatientHomePage({super.key, this.initialIndex = 0});
+  final int initialIndex;
 
   @override
   State<PatientHomePage> createState() => _PatientHomePageState();
@@ -113,14 +114,17 @@ class _TopStrip extends StatelessWidget {
         ],
       ),
       child: Row(
-        children: const [
-          CircleAvatar(
-            radius: 29,
-            backgroundColor: Colors.white,
-            child: Icon(Icons.person, size: 49, color: Color(0xFF05738D)),
+        children: [
+          GestureDetector(
+            onTap: () => Navigator.pushNamed(context, '/settings'),
+            child: const CircleAvatar(
+              radius: 29,
+              backgroundColor: Colors.white,
+              child: Icon(Icons.person, color: Color(0xFF05738D), size: 49),
+            ),
           ),
-          SizedBox(width: 10),
-          Expanded(
+          const SizedBox(width: 10),
+          const Expanded(
             child: Text(
               'Hola Luis!',
               overflow: TextOverflow.ellipsis,
@@ -132,9 +136,10 @@ class _TopStrip extends StatelessWidget {
               ),
             ),
           ),
-          Image(image: AssetImage('assets/logo2.png'), height: 82),
+          Image(image: const AssetImage('assets/logo2.png'), height: 82),
         ],
       ),
+
     );
   }
 }

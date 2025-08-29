@@ -32,10 +32,13 @@ class RecommendationsPage extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  const CircleAvatar(
-                    radius: 29,
-                    backgroundColor: Colors.white,
-                    child: Icon(Icons.person, color: brand, size: 49),
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, '/settings'),
+                    child: const CircleAvatar(
+                      radius: 29,
+                      backgroundColor: Colors.white,
+                      child: Icon(Icons.person, color: Color(0xFF05738D), size: 49),
+                    ),
                   ),
                   const SizedBox(width: 10),
                   const Expanded(
@@ -50,7 +53,7 @@ class RecommendationsPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Image.asset('assets/logo2.png', height: 82),
+                  Image(image: const AssetImage('assets/logo2.png'), height: 82),
                 ],
               ),
             ),
@@ -79,7 +82,7 @@ class RecommendationsPage extends StatelessWidget {
                         width: 36,
                         height: 36,
                         child: Center(
-                          child: Icon(Icons.chevron_left, size: 26, color: brand),
+                          child: Icon(Icons.chevron_left, size: 40, color: brand),
                         ),
                       ),
                     ),
@@ -127,10 +130,9 @@ class RecommendationsPage extends StatelessWidget {
                     child: _RecCard(
                       title: 'Limpiar mis lentes\nde contacto',
                       asset: 'assets/lentes_limpiar.png',
-                      onTap: () {
-                        // TODO: Conecta a la vista "Limpiar mis lentes de contacto" cuando la tengas
-                        // Navigator.push(context, MaterialPageRoute(builder: (_) => const CleanContactLensPage()));
-                      },
+                      onTap: () => Navigator.pushNamed(context, '/contact-lens/clean'),
+
+
                     ),
                   ),
                 ],

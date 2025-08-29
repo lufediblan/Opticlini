@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'ishihara_test_flow_page.dart'; // <-- ajusta la ruta real si cambia
+import 'amsler_grid_page.dart';
+
 class PatientTestsPage extends StatelessWidget {
   const PatientTestsPage({super.key});
 
@@ -15,7 +18,7 @@ class PatientTestsPage extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.fromLTRB(0, 0, 0, 24),
           children: [
-            // ===== HEADER (igual a otras pantallas) =====
+            // ===== HEADER =====
             Container(
               height: 136,
               padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -28,20 +31,28 @@ class PatientTestsPage extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  const CircleAvatar(
-                    radius: 29,
-                    backgroundColor: Colors.white,
-                    child: Icon(Icons.person, color: brand, size: 49),
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, '/settings'),
+                    child: const CircleAvatar(
+                      radius: 29,
+                      backgroundColor: Colors.white,
+                      child: Icon(Icons.person, color: Color(0xFF05738D), size: 49),
+                    ),
                   ),
                   const SizedBox(width: 10),
                   const Expanded(
                     child: Text(
                       'Hola Luis!',
                       overflow: TextOverflow.ellipsis,
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800, color: Colors.black),
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.black,
+                        shadows: [Shadow(color: Color(0x33000000), offset: Offset(0, 1), blurRadius: 2)],
+                      ),
                     ),
                   ),
-                  Image.asset('assets/logo2.png', height: 82),
+                  Image(image: const AssetImage('assets/logo2.png'), height: 82),
                 ],
               ),
             ),
@@ -58,24 +69,33 @@ class PatientTestsPage extends StatelessWidget {
             ),
             const SizedBox(height: 35),
 
-            // ===== TARJETA 1 envuelta con Padding lateral configurable =====
+            // ===== TARJETA 1: Ishihara =====
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24), // <-- cambia este valor cuando quieras
-              child: const _TestCard(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: _TestCard(
                 title: 'Test de Ishihara',
                 asset: 'assets/test_ishihara.png',
                 circleImage: true,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const IshiharaTestFlowPage()),
+                  );
+                },
               ),
             ),
             const SizedBox(height: 35),
 
-            // ===== TARJETA 2 envuelta con Padding lateral configurable =====
+            // ===== TARJETA 2: Amsler =====
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24), // <-- y este también
-              child: const _TestCard(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: _TestCard(
                 title: 'Rejilla de Amsler',
                 asset: 'assets/test_amsler.png',
                 circleImage: false,
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => const AmslerGridPage()));
+                },
               ),
             ),
           ],
@@ -135,6 +155,19 @@ class _TestCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(24),
       onTap: onTap,
       child: card,
+    );
+  }
+}
+
+// Placeholder para Amsler (borra esto si ya tienes tu página)
+class _AmslerPlaceholderPage extends StatelessWidget {
+  const _AmslerPlaceholderPage();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Rejilla de Amsler')),
+      body: const Center(child: Text('Tu pantalla de Amsler va aquí')),
     );
   }
 }

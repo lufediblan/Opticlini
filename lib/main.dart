@@ -6,6 +6,10 @@ import 'features/patient/presentation/pages/recommendations_page.dart';
 import 'features/patient/presentation/pages/clinical_history_page.dart';
 import 'features/patient/presentation/pages/glasses_care_page.dart';
 import 'features/patient/presentation/pages/contact_lens_care_page.dart';
+import 'features/patient/presentation/pages/contact_lens_clean_page.dart';
+import 'features/patient/presentation/pages/ishihara_test_flow_page.dart';
+import 'features/patient/presentation/pages/amsler_grid_page.dart';
+import 'features/patient/presentation/pages/settings_page.dart';
 void main() {
   runApp(const OpticLiniApp());
 }
@@ -88,6 +92,12 @@ class OpticLiniApp extends StatelessWidget {
         '/clinical-history': (_) => const ClinicalHistoryPage(),
         '/recommendations/glasses-care': (_) => const GlassesCarePage(),
         '/recommendations/contact-lens-care': (_) => const ContactLensCarePage(),
+        '/contact-lens/clean': (_) => const ContactLensCleanPage(),
+        '/tests/ishihara': (_) => const IshiharaTestFlowPage(),
+        '/tests/amsler': (_) => const AmslerGridPage(),
+        '/settings': (_) => const SettingsPage(),
+
+
 
       },
     );
