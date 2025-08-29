@@ -28,9 +28,7 @@ class OpticaHomePage extends StatelessWidget {
               ),
               child: Row(
                 children: [
-                  // Espacio para balancear el layout
                   const SizedBox(width: 40),
-                  // Ícono centrado
                   const Expanded(
                     child: Center(
                       child: CircleAvatar(
@@ -40,7 +38,6 @@ class OpticaHomePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  // Logo a la derecha
                   Image.asset('assets/logo2.png', height: 82),
                 ],
               ),
@@ -57,7 +54,7 @@ class OpticaHomePage extends StatelessWidget {
                     asset: 'assets/op_add.png',
                     title: 'Agregar Paciente',
                     onTap: () {
-                      // TODO: Navigator.pushNamed(context, '/optica/add-patient');
+                      Navigator.pushNamed(context, '/optica/add_patient');
                     },
                   ),
                   const SizedBox(height: 20),
@@ -65,7 +62,7 @@ class OpticaHomePage extends StatelessWidget {
                     asset: 'assets/op_remove.png',
                     title: 'Eliminar Paciente',
                     onTap: () {
-                      // TODO: Navigator.pushNamed(context, '/optica/remove-patient');
+                      Navigator.pushNamed(context, '/optica/remove_patient');
                     },
                   ),
                   const SizedBox(height: 20),
@@ -73,18 +70,10 @@ class OpticaHomePage extends StatelessWidget {
                     asset: 'assets/op_history.png',
                     title: 'Historia Clinica',
                     onTap: () {
-                      // TODO: Navigator.pushNamed(context, '/optica/history');
+                      Navigator.pushNamed(context, '/optica/history');
                     },
-                  ),
-                  const SizedBox(height: 20),
-                  _ActionTile(
-                    asset: 'assets/op_calendar.png',
-                    title: 'Citas Registradas',
-                    onTap: () {
-                      // TODO: Navigator.pushNamed(context, '/optica/appointments');
-                    },
-                  ),
-                ],
+                  )
+                ]
               ),
             ),
           ],
@@ -126,7 +115,6 @@ class _ActionTile extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 16),
             child: Row(
               children: [
-                // Icono (PNG turquesa)
                 Image.asset(
                   asset,
                   width: 34,
@@ -134,7 +122,6 @@ class _ActionTile extends StatelessWidget {
                   fit: BoxFit.contain,
                 ),
                 const SizedBox(width: 12),
-                // Título
                 Expanded(
                   child: Text(
                     title,

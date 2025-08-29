@@ -37,3 +37,17 @@ flutter:
     - assets/op_calendar.png
     - assets/op_history.png
     - assets/op_remove.png
+    - assets/ic_user.png
+    - assets/ic_add_exam.png
+    - assets/ic_delete_exam.png
+    - assets/ic_search_exam.png
+    - assets/ic_datos.png
+    - assets/ic_anamnesis.png
+    - assets/ic_agudeza.png
+    - assets/ic_examen_motor.png
+    - assets/ic_optometrico.png
+    - assets/ic_dialogo.png
+    - assets/ic_contactologia.png
+    - assets/ic_medicacion.png
+    - assets/ic_pruebas.png
+    - assets/logo2.png

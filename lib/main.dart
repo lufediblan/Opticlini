@@ -8,6 +8,25 @@ import 'features/patient/presentation/pages/glasses_care_page.dart';
 import 'features/patient/presentation/pages/contact_lens_care_page.dart';
 import 'features/optica/pages/optica_home_page.dart';
 import 'features/optica/pages/add_patient_page.dart';
+import 'features/optica/pages/remove_patient_page.dart';
+import 'features/optica/pages/optica_clinical_history_page.dart';
+import 'features/optica/pages/optica_patient_data_page.dart';
+import 'features/optica/pages/optica_add_exam_page.dart';
+import 'features/optica/pages/optica_anamnesis_page.dart';
+import 'features/optica/pages/optica_agudeza_page.dart';
+import 'features/optica/pages/optica_examen_motor_page.dart';
+import 'features/optica/pages/optica_examen_optometrico_page.dart';
+import 'features/optica/pages/optica_dialogo_conducta_page.dart';
+import 'features/optica/pages/optica_contactologia_page.dart';
+import 'features/optica/pages/optica_medicacion_imagenes_page.dart';
+import 'features/optica/pages/optica_pruebas_page.dart';
+import 'features/optica/pages/optica_eliminar_examen_page.dart';
+import 'features/optica/pages/optica_buscar_examen_page.dart';
+
+
+
+
+
 
 void main() {
   runApp(const OpticLiniApp());
@@ -93,6 +112,26 @@ class OpticLiniApp extends StatelessWidget {
         '/recommendations/glasses-care': (_) => const GlassesCarePage(),
         '/recommendations/contact-lens-care': (_) => const ContactLensCarePage(),
         '/optica/add_patient': (_) => const AddPatientPage(),
+        '/optica/remove_patient': (_) => const RemovePatientPage(),
+        '/optica/history': (_) => const OpticaClinicalHistoryPage(),
+        '/optica/patient-data': (_) => const OpticaPatientDataPage(),
+        '/optica/add-exam': (_) => const OpticaAddExamPage(),
+        '/optica/anamnesis': (_) => const OpticaAnamnesisPage(),
+        '/optica/add_exam/agudeza': (_) => const OpticaAgudezaPage(),
+        '/optica/examen-motor': (_) => const OpticaExamenMotorPage(),
+        '/optica/examen-optometrico': (_) => const OpticaExamenOptometricoPage(),
+        '/dialogo-conducta': (context) => const OpticaDialogoConductaPage(),
+        '/optica/contactologia': (context) => const OpticaContactologiaPage(),
+        '/optica/medicacion-imagenes': (context) => const OpticaMedicacionImagenesPage(),
+        '/optica/pruebas': (context) => const OpticaPruebasPage(),
+        '/optica/eliminar-examen': (_) => const OpticaEliminarExamenPage(),
+        '/optica/buscar-examen': (_) => const OpticaBuscarExamenPage(),
+
+
+
+
+
+
 
 
       },
