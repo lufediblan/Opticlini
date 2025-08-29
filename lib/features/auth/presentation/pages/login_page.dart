@@ -12,14 +12,11 @@ class _LoginPageState extends State<LoginPage> {
 
   void _handleLogin() {
     if (isPaciente) {
-      // Navega al Home del Paciente y reemplaza el login
+      // Home del Paciente
       Navigator.pushReplacementNamed(context, '/patient/home');
     } else {
-      // TODO: cuando tengas el home de Óptica, cambia esta ruta
-      // Navigator.pushReplacementNamed(context, '/optica/home');
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Ruta de Óptica aún no configurada')),
-      );
+      // Home de Óptica
+      Navigator.pushReplacementNamed(context, '/optica/home');
     }
   }
 
@@ -32,13 +29,9 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             children: [
               const SizedBox(height: 30),
+
               // LOGO
-              Center(
-                child: Image.asset(
-                  "assets/logo.png",
-                  height: 120,
-                ),
-              ),
+              Center(child: Image.asset("assets/logo.png", height: 120)),
               const SizedBox(height: 40),
 
               // TABS
@@ -63,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
 
               // BOTÓN LOGIN
               TextButton(
-                onPressed: _handleLogin, // ← ahora navega
+                onPressed: _handleLogin,
                 child: const Text(
                   "Iniciar Sesion",
                   style: TextStyle(
@@ -106,6 +99,7 @@ class _LoginPageState extends State<LoginPage> {
     return Column(
       children: [
         TextField(
+          keyboardType: TextInputType.number,
           decoration: InputDecoration(
             hintText: "Documento de Identidad",
             prefixIcon: const Icon(Icons.person_outline),
@@ -125,6 +119,7 @@ class _LoginPageState extends State<LoginPage> {
     return Column(
       children: [
         TextField(
+          textCapitalization: TextCapitalization.words,
           decoration: InputDecoration(
             hintText: "Nombre del profesional",
             prefixIcon: const Icon(Icons.person_outline),
@@ -155,7 +150,6 @@ class _LoginPageState extends State<LoginPage> {
           alignment: Alignment.centerLeft,
           child: GestureDetector(
             onTap: () {
-              // Aquí navegamos a RegisterPage
               Navigator.pushNamed(context, "/register");
             },
             child: const Text(
@@ -165,7 +159,7 @@ class _LoginPageState extends State<LoginPage> {
                 fontWeight: FontWeight.bold,
               ),
             ),
-          )
+          ),
         ),
       ],
     );

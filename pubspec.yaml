@@ -33,3 +33,7 @@ flutter:
     - assets/ic_hands.png
     - assets/ic_drops.png
     - assets/ic_warning.png
+    - assets/op_add.png
+    - assets/op_calendar.png
+    - assets/op_history.png
+    - assets/op_remove.png
