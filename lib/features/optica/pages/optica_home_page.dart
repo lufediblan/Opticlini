@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class OpticaHomePage extends StatelessWidget {
   const OpticaHomePage({super.key});
 
-  static const Color brand = Color(0xFF05738D);   // turquesa de la app
+  static const Color brand = Color(0xFF05738D); // turquesa de la app
   static const Color headerGray = Color(0xFFEEEEEE);
 
   @override
@@ -15,10 +15,8 @@ class OpticaHomePage extends StatelessWidget {
           physics: const BouncingScrollPhysics(),
           padding: const EdgeInsets.fromLTRB(0, 0, 0, 28),
           children: [
-            // ===== Header (mismo tamaño; ícono CENTRADO) =====
             Container(
-              height: 136,
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
               decoration: BoxDecoration(
                 color: headerGray,
                 borderRadius: const BorderRadius.vertical(bottom: Radius.circular(20)),
@@ -26,19 +24,46 @@ class OpticaHomePage extends StatelessWidget {
                   BoxShadow(color: Color(0x22000000), blurRadius: 12, offset: Offset(0, 6)),
                 ],
               ),
-              child: Row(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(width: 40),
-                  const Expanded(
-                    child: Center(
-                      child: CircleAvatar(
-                        radius: 29,
-                        backgroundColor: Colors.white,
-                        child: Icon(Icons.person, color: brand, size: 49),
+                  Row(
+                    children: [
+                      const SizedBox(width: 40),
+                      const Expanded(
+                        child: Center(
+                          child: CircleAvatar(
+                            radius: 29,
+                            backgroundColor: Colors.white,
+                            child: Icon(Icons.person, color: brand, size: 49),
+                          ),
+                        ),
+                      ),
+                      Image.asset('assets/logo2.png', height: 82),
+                    ],
+                  ),
+                  const SizedBox(height: 6),
+                  const Text(
+                    "Hola Luis!",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, '/');
+                    },
+                    child: const Text(
+                      "Cerrar Sesión",
+                      style: TextStyle(
+                        color: Colors.red,
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
-                  Image.asset('assets/logo2.png', height: 82),
                 ],
               ),
             ),
@@ -72,8 +97,8 @@ class OpticaHomePage extends StatelessWidget {
                     onTap: () {
                       Navigator.pushNamed(context, '/optica/history');
                     },
-                  )
-                ]
+                  ),
+                ],
               ),
             ),
           ],
@@ -83,7 +108,6 @@ class OpticaHomePage extends StatelessWidget {
   }
 }
 
-/// Tarjeta/píldora con icono + texto
 class _ActionTile extends StatelessWidget {
   const _ActionTile({
     required this.asset,

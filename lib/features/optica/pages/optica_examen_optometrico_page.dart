@@ -101,10 +101,6 @@ class OpticaExamenOptometricoPage extends StatelessWidget {
                         _input('Otros Hallazgos'),
                       ]),
 
-                      _sectionCard('Retinoscopía (OD / OI)', [
-                        _doubleInput('OD - Subjetivo', Icons.remove_red_eye, 'OI - Subjetivo', Icons.remove_red_eye),
-                      ]),
-
                       _sectionCard('Fórmula Final (OD / OI)', [
                         _doubleInput('Esfera', Icons.remove_red_eye, 'Esfera', Icons.remove_red_eye),
                         _doubleInput('Cilindro', Icons.remove_red_eye, 'Cilindro', Icons.remove_red_eye),
@@ -112,23 +108,12 @@ class OpticaExamenOptometricoPage extends StatelessWidget {
                         _doubleInput('Agudeza', Icons.remove_red_eye, 'Agudeza', Icons.remove_red_eye),
                       ]),
 
-                      _sectionCard('RX Final Cercana (Opcional)', [
-                        _doubleInput('Esfera', Icons.remove_red_eye, 'Esfera', Icons.remove_red_eye),
-                        _doubleInput('Cilindro', Icons.remove_red_eye, 'Cilindro', Icons.remove_red_eye),
-                        _doubleInput('Eje', Icons.remove_red_eye, 'Adición', Icons.remove_red_eye),
-                        _doubleInput('Agudeza', Icons.remove_red_eye, 'Agudeza', Icons.remove_red_eye),
-                      ]),
 
                       _sectionCard('Material y Uso', [
                         _doubleInput('Material del Lente', Icons.remove_red_eye, 'Material del Lente', Icons.remove_red_eye),
                         _input('Uso del Lente', icon: Icons.list),
                       ]),
 
-                      _sectionCard('Medidas', [
-                        _doubleInput('Distancia Naso-Pupilar', Icons.remove_red_eye, 'Distancia Naso-Pupilar', Icons.remove_red_eye),
-                        _input('Distancia Pupilar'),
-                        _doubleInput('Altura Focal', Icons.remove_red_eye, 'Altura Focal', Icons.remove_red_eye),
-                      ]),
 
                       const SizedBox(height: 12),
                       _actionButton('Guardar'),

@@ -62,7 +62,6 @@ class AddPatientPage extends StatelessWidget {
                     _doubleInput("Apellido", Icons.person, "Segundo Apellido", Icons.person_outline),
                     _doubleInput("Fecha de nacimiento", Icons.calendar_today, "Edad", Icons.cake),
                     _doubleInput("Sexo", Icons.wc, "RH", Icons.bloodtype),
-                    _doubleInput("Estado de la Historia", Icons.info, "", Icons.info),
 
                     _sectionTitle("Contacto:"),
                     _doubleInput("Dirección", Icons.location_on, "Barrio", Icons.map),
@@ -72,14 +71,6 @@ class AddPatientPage extends StatelessWidget {
 
                     _sectionTitle("Afiliación y usuario:"),
                     _inputField("EPS", Icons.health_and_safety),
-                    _doubleInput("País", Icons.flag, "Departamento", Icons.location_city),
-                    _doubleInput("Tipo de usuario", Icons.person, "Tipo de Afiliación", Icons.security),
-
-                    _sectionTitle("Responsable / Acompañante:"),
-                    _doubleInput("Nombre", Icons.person, "Apellido", Icons.person),
-                    _doubleInput("Telefono", Icons.phone, "Telefono", Icons.phone),
-                    _doubleInput("Tipo de documento", Icons.badge, "Numero de documento", Icons.credit_card),
-                    _inputField("Parentesco", Icons.family_restroom),
 
                     const SizedBox(height: 20),
                     Center(

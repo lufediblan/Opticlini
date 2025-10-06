@@ -95,7 +95,6 @@ class OpticaAgudezaPage extends StatelessWidget {
                         _input('Corrección Visual', icon: Icons.remove_red_eye),
                         _input('Lentes de Uso', icon: Icons.check),
                         _input('Tipo de consulta', icon: Icons.list),
-                        _input('Notas', icon: Icons.note),
                       ]),
                       _groupCard('AV Sin Corrección (OD / OI)', [
                         _input('Visión Lejana', icon: Icons.visibility),
@@ -107,20 +106,10 @@ class OpticaAgudezaPage extends StatelessWidget {
                         _doubleInput('Eje', Icons.remove_red_eye, 'Adición', Icons.remove_red_eye),
                         _input('Agudeza Visión Lejana'),
                         _input('Agudeza Visión Cercana'),
-                        _input('Notas'),
                       ]),
                       _groupCard('Biomicropía', [
                         _doubleInput('OD', Icons.remove_red_eye, 'OI', Icons.remove_red_eye),
-                        _input('Notas'),
                       ]),
-                      _groupCard('Fondo de Ojo', [
-                        _input(''),
-                      ]),
-                      _groupCard('Presión Intraocular (OD / OI)', [
-                        _doubleInput('mmHg', Icons.album, 'mmHg', Icons.album),
-                        _input('Ojo Dominante'),
-                      ]),
-
                       const SizedBox(height: 12),
                       _button('Guardar'),
                       _button('Continuar'),

@@ -64,29 +64,14 @@ class OpticaAddExamPage extends StatelessWidget {
                       childAspectRatio: 1.1,
                       children: [
                         _examTile('Datos', 'assets/ic_datos.png', () {}),
-                        _examTile('Anamnesis', 'assets/ic_anamnesis.png', () {
-                          Navigator.pushNamed(context, '/optica/anamnesis');
-                        }),
                         _examTile('Agudeza', 'assets/ic_agudeza.png', () {
                           Navigator.pushNamed(context, '/optica/add_exam/agudeza');
-                        }),
-                        _examTile('Examen Motor', 'assets/ic_examen_motor.png', () {
-                          Navigator.pushNamed(context, '/optica/examen-motor');
                         }),
                         _examTile('Examen Optometrico', 'assets/ic_optometrico.png', () {
                           Navigator.pushNamed(context, '/optica/examen-optometrico');
                         }),
-                        _examTile('Dialogo y Conducta', 'assets/ic_dialogo.png', () {
-                          Navigator.pushNamed(context, '/dialogo-conducta');
-                        }),
-                        _examTile('Contactología', 'assets/ic_contactologia.png', () {
-                          Navigator.pushNamed(context, '/optica/contactologia');
-                        }),
                         _examTile('Medicación e Imágenes', 'assets/ic_medicacion.png', () {
                           Navigator.pushNamed(context, '/optica/medicacion-imagenes');
-                        }),
-                        _examTile('Pruebas', 'assets/ic_pruebas.png', () {
-                          Navigator.pushNamed(context, '/optica/pruebas');
                         }),
                       ],
                     ),
