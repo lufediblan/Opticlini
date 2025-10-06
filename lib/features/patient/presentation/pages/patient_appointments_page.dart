@@ -42,18 +42,31 @@ class PatientAppointmentsPage extends StatelessWidget {
             ),
             child: Row(
               children: [
-                const CircleAvatar(
-                  radius: 29,
-                  backgroundColor: Colors.white,
-                  child: Icon(Icons.person, color: brand, size: 49),
+                GestureDetector(
+                  onTap: () => Navigator.pushNamed(context, '/settings'),
+                  child: const CircleAvatar(
+                    radius: 29,
+                    backgroundColor: Colors.white,
+                    child: Icon(Icons.person, color: brand, size: 49),
+                  ),
                 ),
                 const SizedBox(width: 10),
                 const Expanded(
-                  child: Text('Hola Luis!', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800)),
+                  child: Text(
+                    'Hola Luis!',
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w800,
+                      color: Colors.black,
+                      shadows: [Shadow(color: Color(0x33000000), offset: Offset(0, 1), blurRadius: 2)],
+                    ),
+                  ),
                 ),
-                Image.asset('assets/logo2.png', height: 82),
+                Image(image: const AssetImage('assets/logo2.png'), height: 82),
               ],
             ),
+
           ),
 
           const SizedBox(height: 52),

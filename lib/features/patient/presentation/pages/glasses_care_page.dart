@@ -42,14 +42,17 @@ class GlassesCarePage extends StatelessWidget {
                 ],
               ),
               child: Row(
-                children: const [
-                  CircleAvatar(
-                    radius: 29,
-                    backgroundColor: Colors.white,
-                    child: Icon(Icons.person, color: brand, size: 49),
+                children: [
+                  GestureDetector(
+                    onTap: () => Navigator.pushNamed(context, '/settings'),
+                    child: const CircleAvatar(
+                      radius: 29,
+                      backgroundColor: Colors.white,
+                      child: Icon(Icons.person, color: brand, size: 49),
+                    ),
                   ),
-                  SizedBox(width: 10),
-                  Expanded(
+                  const SizedBox(width: 10),
+                  const Expanded(
                     child: Text(
                       'Hola Luis!',
                       overflow: TextOverflow.ellipsis,
@@ -61,9 +64,10 @@ class GlassesCarePage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Image(image: AssetImage('assets/logo2.png'), height: 82),
+                  Image(image: const AssetImage('assets/logo2.png'), height: 82),
                 ],
               ),
+
             ),
 
             const SizedBox(height: 56),

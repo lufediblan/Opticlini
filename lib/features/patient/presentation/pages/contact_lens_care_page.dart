@@ -41,32 +41,35 @@ class ContactLensCarePage extends StatelessWidget {
                   BoxShadow(color: Color(0x22000000), blurRadius: 12, offset: Offset(0, 6)),
                 ],
               ),
-              child: Row(
-                children: const [
-                  CircleAvatar(
-                    radius: 29,
-                    backgroundColor: Colors.white,
-                    child: Icon(Icons.person, color: brand, size: 49),
-                  ),
-                  SizedBox(width: 10),
-                  Expanded(
-                    child: Text(
-                      'Hola Luis!',
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w800,
-                        color: Colors.black,
-                        shadows: [Shadow(color: Color(0x33000000), offset: Offset(0, 1), blurRadius: 2)],
-                      ),
-                    ),
-                  ),
-                  Image(image: AssetImage('assets/logo2.png'), height: 82),
-                ],
+          child: Row(
+            children: [
+              GestureDetector(
+                onTap: () => Navigator.pushNamed(context, '/settings'),
+                child: const CircleAvatar(
+                  radius: 29,
+                  backgroundColor: Colors.white,
+                  child: Icon(Icons.person, color:brand, size: 49),
+                ),
               ),
+              const SizedBox(width: 10),
+              const Expanded(
+                child: Text(
+                  'Hola Luis!',
+                  overflow: TextOverflow.ellipsis,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.w800,
+                    color: Colors.black,
+                    shadows: [Shadow(color: Color(0x33000000), offset: Offset(0, 1), blurRadius: 2)],
+                  ),
+                ),
+              ),
+              Image(image: const AssetImage('assets/logo2.png'), height: 82),
+            ],
+          ),
             ),
 
-            const SizedBox(height: 56),
+          const SizedBox(height: 56),
 
             // ===== Píldora (misma que Recomendaciones) =====
             Padding(
@@ -91,7 +94,7 @@ class ContactLensCarePage extends StatelessWidget {
                         width: 36,
                         height: 36,
                         child: Center(
-                          child: Icon(Icons.chevron_left, size: 26, color: brand),
+                          child: Icon(Icons.chevron_left, size: 40, color: brand),
                         ),
                       ),
                     ),
@@ -99,28 +102,23 @@ class ContactLensCarePage extends StatelessWidget {
                       child: Center(
                         child: Text(
                           'Cuidar mis lentes de contacto',
-                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.w800),
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
-                    ),
-                    const SizedBox(
-                      width: 36,
-                      height: 36,
-                      child: Center(child: Icon(Icons.auto_awesome, size: 22, color: brand)),
                     ),
                   ],
                 ),
               ),
             ),
 
-            const SizedBox(height: 28),
+            const SizedBox(height: 35),
 
             // ===== Tarjeta 1: Lávate las manos =====
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: _InfoCard(
-                leading: const Icon(Icons.clean_hands_rounded, color: brand, size: 40),
+                leading: _PngIcon('assets/ic_hands.png'),
                 title: 'Lávate las manos siempre',
                 body:
                 'Antes de tocar tus lentes, lava tus manos con jabón antibacterial y sécalas '
@@ -128,13 +126,13 @@ class ContactLensCarePage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 18),
+            const SizedBox(height: 35),
 
             // ===== Tarjeta 2: Respeta los tiempos (reloj PNG) =====
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 24),
               child: _InfoCard(
-                leading: _PngIcon('assets/reloj1.png'),
+                leading: _PngIcon('assets/ic_clock.png'),
                 title: 'Respeta los tiempos de uso',
                 body:
                 'No excedas el tiempo recomendado: diarios (1 día), semanales (7 días), '
@@ -142,13 +140,13 @@ class ContactLensCarePage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 18),
+            const SizedBox(height: 35),
 
             // ===== Tarjeta 3: Solución estéril =====
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: _InfoCard(
-                leading: const Icon(Icons.water_drop_rounded, color: brand, size: 40),
+                leading: _PngIcon('assets/ic_drops.png'),
                 title: 'Usa solo solución estéril',
                 body:
                 'Nunca uses agua del grifo, saliva o soluciones caseras. Solo utiliza '
@@ -156,13 +154,13 @@ class ContactLensCarePage extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 18),
+            const SizedBox(height: 35),
 
             // ===== Tarjeta 4: Cambia el estuche (peligro PNG) =====
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 24),
               child: _InfoCard(
-                leading: _PngIcon('assets/peligro.png'),
+                leading: _PngIcon('assets/ic_warning.png'),
                 title: 'Cambia el estuche regularmente',
                 body:
                 'Reemplaza tu estuche cada 3 meses y enjuágalo diariamente con solución fresca, '
@@ -178,7 +176,7 @@ class ContactLensCarePage extends StatelessWidget {
 
 /// Icono PNG con tamaño consistente
 class _PngIcon extends StatelessWidget {
-  const _PngIcon(this.asset, {this.size = 40});
+  const _PngIcon(this.asset, {this.size = 80});
   final String asset;
   final double size;
 

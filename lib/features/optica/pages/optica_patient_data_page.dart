@@ -82,27 +82,15 @@ class OpticaPatientDataPage extends StatelessWidget {
                     _doubleDisabled('Nombre', Icons.person, 'Segundo Nombre', Icons.person_outline),
                     _doubleDisabled('Apellido', Icons.person, 'Segundo Apellido', Icons.person_outline),
                     _doubleDisabled('Fecha de nacimiento', Icons.calendar_today, 'Edad', Icons.cake),
-                    _doubleDisabled('Sexo', Icons.wc, 'RH', Icons.bloodtype),
-                    _disabledField('Estado de la Historia', Icons.info),
 
                     _sectionTitle('Contacto:'),
                     _doubleDisabled('Dirección', Icons.location_on, 'Barrio', Icons.map),
                     _doubleDisabled('Telefono', Icons.phone, 'Telefono', Icons.phone_android),
                     _disabledField('Correo', Icons.email),
-                    _doubleDisabled('Estado civil', Icons.group, 'Ocupación', Icons.work),
 
                     _sectionTitle('Afiliacion y usuario:'),
                     _disabledField('EPS', Icons.health_and_safety),
-                    _doubleDisabled('País', Icons.flag, 'Departamento', Icons.location_city),
-                    _doubleDisabled('Tipo de usuario', Icons.person, 'Tipo de Afiliación', Icons.security),
 
-                    _sectionTitle('Responsable / Acompañante:'),
-                    _doubleDisabled('Nombre', Icons.person, 'Apellido', Icons.person),
-                    _doubleDisabled('Telefono', Icons.phone, 'Telefono', Icons.phone),
-                    _doubleDisabled('Tipo de documento', Icons.badge, 'Numero de documento', Icons.credit_card),
-                    _disabledField('Parentesco', Icons.family_restroom),
-
-                    _sectionTitle('Notas:'),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
                       child: TextField(

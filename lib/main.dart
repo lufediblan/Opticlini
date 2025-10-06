@@ -6,6 +6,10 @@ import 'features/patient/presentation/pages/recommendations_page.dart';
 import 'features/patient/presentation/pages/clinical_history_page.dart';
 import 'features/patient/presentation/pages/glasses_care_page.dart';
 import 'features/patient/presentation/pages/contact_lens_care_page.dart';
+import 'features/patient/presentation/pages/contact_lens_clean_page.dart';
+import 'features/patient/presentation/pages/ishihara_test_flow_page.dart';
+import 'features/patient/presentation/pages/amsler_grid_page.dart';
+import 'features/patient/presentation/pages/settings_page.dart';
 import 'features/optica/pages/optica_home_page.dart';
 import 'features/optica/pages/add_patient_page.dart';
 import 'features/optica/pages/remove_patient_page.dart';
@@ -17,10 +21,6 @@ import 'features/optica/pages/optica_medicacion_imagenes_page.dart';
 import 'features/optica/pages/optica_eliminar_examen_page.dart';
 import 'features/optica/pages/optica_buscar_examen_page.dart';
 import 'features/optica/pages/optica_add_exam_page.dart';
-
-
-
-
 
 
 void main() {
@@ -101,11 +101,14 @@ class OpticLiniApp extends StatelessWidget {
         '/': (_) => const LoginPage(),
         '/register': (_) => const RegisterPage(),
         '/patient/home': (_) => const PatientHomePage(),
-        '/optica/home': (_) => const OpticaHomePage(),
         '/recommendations': (_) => const RecommendationsPage(),
         '/clinical-history': (_) => const ClinicalHistoryPage(),
         '/recommendations/glasses-care': (_) => const GlassesCarePage(),
         '/recommendations/contact-lens-care': (_) => const ContactLensCarePage(),
+        '/contact-lens/clean': (_) => const ContactLensCleanPage(),
+        '/tests/ishihara': (_) => const IshiharaTestFlowPage(),
+        '/tests/amsler': (_) => const AmslerGridPage(),
+        '/settings': (_) => const SettingsPage(),
         '/optica/add_patient': (_) => const AddPatientPage(),
         '/optica/remove_patient': (_) => const RemovePatientPage(),
         '/optica/history': (_) => const OpticaClinicalHistoryPage(),
@@ -113,9 +116,10 @@ class OpticLiniApp extends StatelessWidget {
         '/optica/add-exam': (_) => const OpticaAddExamPage(),
         '/optica/add_exam/agudeza': (_) => const OpticaAgudezaPage(),
         '/optica/examen-optometrico': (_) => const OpticaExamenOptometricoPage(),
-        '/optica/medicacion-imagenes': (context) => const OpticaMedicacionImagenesPage(),
+        '/optica/medicacion-imagenes': (_) => const OpticaMedicacionImagenesPage(),
         '/optica/eliminar-examen': (_) => const OpticaEliminarExamenPage(),
         '/optica/buscar-examen': (_) => const OpticaBuscarExamenPage(),
+        '/optica/home': (_) => const OpticaHomePage(),
 
 
 
